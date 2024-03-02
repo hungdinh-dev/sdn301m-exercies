@@ -9,6 +9,18 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// Khởi tạo b3 biến Router
+var dishRouter = require('./routes/dishRouter');
+var promoRouter = require('./routes/promoRouter');
+var leaderRouter = require('./routes/leaderRouter');
+
+
+//Sử dụng ba biến router
+app.use('/dishes',dishRouter);
+app.use('/promotions',promoRouter);
+app.use('/leaders',leaderRouter);
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
